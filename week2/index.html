@@ -1,0 +1,134 @@
+<!-- Task 1: Understanding Databases -->
+<p><strong>What is a Database?</strong></p>
+<p>A database is an organized collection of data that is stored and accessed electronically. Databases are designed to manage and store large amounts of information efficiently, allowing users to retrieve, update, and manipulate data easily. They can be used to store various types of data, including text, numbers, and multimedia files, and are essential for applications that require persistent data storage, such as websites, software programs, and business systems.</p>
+
+<p><strong>SQL Basics</strong></p>
+<p>SQL, or Structured Query Language, is a standard programming language used for managing and manipulating relational databases. It is essential because it provides a systematic way to create, retrieve, update, and delete data within a database. SQL commands allow users to perform complex queries, join tables, and enforce data integrity, making it a critical tool for database management and operations.</p>
+
+<!-- Task 2: Types of Databases -->
+<p><strong>Comparison Chart: Relational vs. Non-relational Databases</strong></p>
+<table border="1">
+  <tr>
+    <th>Feature</th>
+    <th>Relational Databases</th>
+    <th>Non-relational Databases</th>
+  </tr>
+  <tr>
+    <td>Data Model</td>
+    <td>Structured in tables with rows and columns</td>
+    <td>Flexible data models (e.g., key-value, document, graph)</td>
+  </tr>
+  <tr>
+    <td>Schema</td>
+    <td>Predefined schema</td>
+    <td>Dynamic schema</td>
+  </tr>
+  <tr>
+    <td>Examples</td>
+    <td>MySQL, PostgreSQL, SQLite</td>
+    <td>MongoDB, Cassandra, Redis</td>
+  </tr>
+</table>
+
+<p><strong>What is MySQL?</strong></p>
+<p>MySQL is an open-source relational database management system (RDBMS) based on SQL. It is known for its reliability, performance, and ease of use. MySQL supports various storage engines, robust data security features, and a wide range of functions and tools for database management. It is commonly used for web applications, enterprise solutions, and data warehousing due to its scalability and compatibility with various platforms.</p>
+
+<!-- Task 3: Numeric Data Types in MySQL -->
+<p><strong>Numeric Data Types in MySQL</strong></p>
+<ul>
+  <li><strong>INT:</strong> A standard integer data type. Example: <code>age INT</code></li>
+  <li><strong>FLOAT:</strong> A floating-point number with precision. Example: <code>price FLOAT</code></li>
+  <li><strong>DOUBLE:</strong> A double-precision floating-point number. Example: <code>salary DOUBLE</code></li>
+  <li><strong>DECIMAL:</strong> A fixed-point number with a specified precision and scale. Example: <code>balance DECIMAL(10,2)</code></li>
+</ul>
+
+<!-- Task 4: String Data Types in MySQL -->
+<p><strong>String Data Types in MySQL</strong></p>
+<ul>
+  <li><strong>CHAR:</strong> A fixed-length string. Example: <code>code CHAR(5)</code></li>
+  <li><strong>VARCHAR:</strong> A variable-length string. Example: <code>name VARCHAR(100)</code></li>
+  <li><strong>TEXT:</strong> A large variable-length string. Example: <code>description TEXT</code></li>
+  <li><strong>BLOB:</strong> A binary large object for storing binary data. Example: <code>image BLOB</code></li>
+</ul>
+
+<!-- Task 5: Date and Time Data Types in MySQL -->
+<p><strong>Date and Time Data Types in MySQL</strong></p>
+<ul>
+  <li><strong>DATE:</strong> A date value in 'YYYY-MM-DD' format. Example: <code>birthdate DATE</code></li>
+  <li><strong>DATETIME:</strong> A date and time value in 'YYYY-MM-DD HH:MM:SS' format. Example: <code>created_at DATETIME</code></li>
+  <li><strong>TIME:</strong> A time value in 'HH:MM:SS' format. Example: <code>start_time TIME</code></li>
+  <li><strong>TIMESTAMP:</strong> A timestamp value for tracking changes. Example: <code>updated_at TIMESTAMP</code></li>
+</ul>
+
+<!-- Task 6: Primary Keys -->
+<p><strong>What is a Primary Key?</strong></p>
+<p>A primary key is a unique identifier for each record in a database table. It ensures that each record can be uniquely identified and retrieved. Primary keys are important because they enforce entity integrity, preventing duplicate records and ensuring that each record is distinct.</p>
+
+<!-- Task 7: Null and Not Null Constraints -->
+<p><strong>NULL and NOT NULL Constraints</strong></p>
+<p>NULL constraints allow a column to have no value, whereas NOT NULL constraints require a column to always have a value. For example, a column defined as <code>name VARCHAR(100) NOT NULL</code> means the name field must always contain a value, while <code>email VARCHAR(100)</code> allows the email field to be empty.</p>
+
+<!-- Task 8: Auto-Increment -->
+<p><strong>What is AUTO_INCREMENT?</strong></p>
+<p>AUTO_INCREMENT is a MySQL feature that automatically generates a unique number for each new record in a table, typically used for primary key columns. For example, <code>id INT AUTO_INCREMENT PRIMARY KEY</code> ensures that each new record has a unique ID value.</p>
+
+<!-- Task 9: Creating a Database -->
+<p><strong>Creating a Database</strong></p>
+<p>The SQL command to create a new database named StudentDB is:</p>
+<pre><code>CREATE DATABASE StudentDB;</code></pre>
+
+<!-- Task 10: Creating a Table -->
+<p><strong>Creating a Table</strong></p>
+<p>The SQL command to create a table named Students with the specified columns is:</p>
+<pre><code>
+CREATE TABLE Students (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100),
+  enrollment_date DATE
+);
+</code></pre>
+
+<!-- Task 11: Insert, Update, Delete -->
+<p><strong>Insert, Update, Delete</strong></p>
+<p>Insert Data: The SQL command to insert a new student record is:</p>
+<pre><code>INSERT INTO Students (name, email, enrollment_date) VALUES ('John Doe', 'john.doe@example.com', '2023-01-15');</code></pre>
+<p>Update Data: The SQL command to update the email of the student with id = 1 is:</p>
+<pre><code>UPDATE Students SET email = 'new.email@example.com' WHERE id = 1;</code></pre>
+<p>Delete Data: The SQL command to delete the student record with id = 1 is:</p>
+<pre><code>DELETE FROM Students WHERE id = 1;</code></pre>
+
+<!-- Task 12: Using a Database -->
+<p><strong>Using a Database</strong></p>
+<p>The SQL command to select and use the StudentDB database is:</p>
+<pre><code>USE StudentDB;</code></pre>
+
+<!-- Task 13: Creating a Database and Table -->
+<p><strong>Creating a Database and Table</strong></p>
+<p>Hands-On: Using phpMyAdmin, create a new database named PracticeDB. In PracticeDB, create a table named Employees with the following structure:</p>
+<pre><code>
+CREATE TABLE Employees (
+  emp_id INT AUTO_INCREMENT PRIMARY KEY,
+  emp_name VARCHAR(100) NOT NULL,
+  emp_position VARCHAR(100),
+  hire_date DATE
+);
+</code></pre>
+
+<!-- Task 14: Working with Different Data Types -->
+<p><strong>Working with Different Data Types</strong></p>
+<p>Create additional tables in PracticeDB with columns that use various data types (numeric, string, date/time).</p>
+
+<!-- Task 15: Data Manipulation -->
+<p><strong>Data Manipulation</strong></p>
+<p>Insert Data: Insert at least three records into the Employees table:</p>
+<pre><code>
+INSERT INTO Employees (emp_name, emp_position, hire_date) VALUES
+('Alice Johnson', 'Manager', '2022-03-01'),
+('Bob Smith', 'Developer', '2022-06-15'),
+('Carol White', 'Designer', '2023-01-10');
+</code></pre>
+<p>Update Data: Update the emp_position of one of the employees:</p>
+<pre><code>UPDATE Employees SET emp_position = 'Senior Developer' WHERE emp_name = 'Bob Smith';</code></pre>
+<p>Delete Data: Delete one of the employee records from the table:</p>
+<pre><code>DELETE FROM Employees WHERE emp_name = 'Carol White';</code></pre>
