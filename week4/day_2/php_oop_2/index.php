@@ -20,7 +20,7 @@ class Student
     // Return student details as a string.
     public function getDetails()
     {
-        return $this->name . " " . $this->age . " " . $this->studentID;
+        return "name:" . $this->name . "  / age:" . $this->age . "  / studentID:" . $this->studentID;
     }
 
     // Getters and setters for each property.
@@ -58,14 +58,16 @@ class Classroom
 
     public function addStudent($student)
     {
-        $this->students[] = $student;
+        array_push($this->students, $student);
     }
+    
 
     public function removeStudent($studentID)
     {
         foreach ($this->students as $key => $student) {
             if ($student->getStudentID() == $studentID) {
                 unset($this->students[$key]);
+                return;
             }
         }
     }
@@ -88,7 +90,9 @@ $classroom1 = new Classroom();
 $classroom1->addStudent($student1);
 $classroom1->addStudent($student2);
 
+$classroom1->removeStudent(200782997);
 $students = $classroom1->getStudents();
+
 
 foreach ($students as $studentDetails) {
     echo $studentDetails . "<hr>";
