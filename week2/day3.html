@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>task1</h2>
+    <b>
+        <pre>
+        SELECT employees.first_name, employees.last_name, departments.department_name
+        FROM employees 
+        JOIN departments ON employees.department_id = departments.department_id;        
+    </pre>
+    </b>
+
+    <h2>task2</h2>
+    <b>
+        <pre>
+        SELECT e.first_name, e.last_name, p.project_name
+        FROM employees e
+        LEFT JOIN employee_projects ep ON e.employee_id = ep.employee_id
+        LEFT JOIN projects p ON ep.project_id = p.project_id
+    </pre>
+    </b>
+
+    <h2>task3</h2>
+    <b>
+        <pre>
+        SELECT d.department_name, e.first_name, e.last_name
+        FROM employees e
+        RIGHT JOIN departments d ON e.department_id = d.department_id;
+    </pre>
+    </b>
+
+    <h2>task4</h2>
+    <b>
+        <pre>
+            SELECT e.first_name, e.last_name, p.project_name
+            FROM employees e
+            LEFT JOIN employee_projects ep ON e.employee_id = ep.employee_id
+            LEFT JOIN projects p ON ep.project_id = p.project_id
+            UNION 
+            SELECT e.first_name, e.last_name, p.project_name
+            FROM employees e
+            LEFT JOIN employee_projects ep ON e.employee_id = ep.employee_id
+            RIGHT JOIN projects p ON ep.project_id = p.project_id
+    </pre>
+    </b>
+
+    <h2>task5</h2>
+    <b>
+        <pre>
+
+    </pre>
+    </b>
+
+</body>
+
+</html>
+
+
+<!--
+         -->

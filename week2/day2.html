@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>task 1</h2>
+    <p>
+        SELECT * FROM employees;
+    </p>
+
+    <h2>task 2</h2>
+    <p>
+        SELECT name,salary FROM employees;
+    </p>
+
+    <h2>task 3</h2>
+    <p>
+        SELECT * FROM employees whare salary >50,000;
+    </p>
+
+    <h2>task 4</h2>
+    <p>
+        SELECT * FROM employees whare name LIKE 'J%';
+    </p>
+
+    <h2>task 5</h2>
+    <p>
+        SELECT * FROM employees whare departments in (1,2,3);
+    </p>
+
+    <h2>task 6</h2>
+    <p>
+        SELECT * FROM employees ORDER BY hire_date DESC;
+    </p>
+
+    <h2>task 7</h2>
+    <p>
+        SELECT COUNT(*) FROM employees;
+    </p>
+
+    <h2>task 8</h2>
+    <p>
+        SELECT SUM(salary) FROM employees;
+    </p>
+
+    <h2>task 9</h2>
+    <p>
+        SELECT avg(salary) FROM employees;
+    </p>
+
+    <h2>task 10</h2>
+    <p>
+        SELECT minimum(salary), maximum(salary) FROM employees;
+    </p>
+
+    <h2>task 11</h2>
+    <p>
+        SELECT * FROM employees WHERE salary > 50000;
+        <br>
+        <br>
+        SELECT department_id, AVG(salary)
+        FROM employees
+        GROUP BY department_id
+        HAVING AVG(salary) > 50000;
+    </p>
+
+    <h2>task 12</h2>
+    <p>
+        CREATE TABLE employees (<br>
+        employee_id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        first_name VARCHAR(50) NOT NULL,<br>
+        last_name VARCHAR(50) NOT NULL,<br>
+        email VARCHAR(100) UNIQUE NOT NULL<br>
+        );
+        <br>
+        <br>
+        CREATE TABLE employee_details (<br>
+        detail_id INTAUTO_INCREMENT PRIMARY KEY,<br>
+        employee_id INT UNIQUE NOT NULL,<br>
+        address VARCHAR(255),<br>
+        phone_number VARCHAR(20),<br>
+        hire_date DATE,<br>
+        FOREIGN KEY (employee_id) REFERENCES employees(employee_id) ON DELETE CASCADE<br>
+        );
+
+    </p>
+
+    <h2>task 13</h2>
+    <p>
+        CREATE TABLE departments (<br>
+        department_id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        department_name VARCHAR(255) NOT NULL<br>
+        );
+<br>
+<br>
+        CREATE TABLE employees (<br>
+        employee_id INT AUTO_INCREMENT PRIMARY KEY,<br>
+        employee_name VARCHAR(255) NOT NULL,<br>
+        department_id INT,<br>
+        FOREIGN KEY (department_id) REFERENCES departments(department_id)<br>
+        );
+
+    </p>
+
+</body>
+
+</html>

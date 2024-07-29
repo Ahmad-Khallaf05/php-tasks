@@ -11,7 +11,7 @@ class Car {
     }
 
     public function __destruct() {
-        echo "Car with VIN {$this->vin} is being destroyed.<hr>";
+        echo "Car with VIN {$this->vin}is destroyed.<hr>";
     }
 
     public function getDetails() {
